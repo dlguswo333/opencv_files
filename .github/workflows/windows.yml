@@ -3,6 +3,8 @@ name: Windows Server 2022
 on:
   pull_request:
     types: [synchronize, opened]
+  workflow_dispatch:
+
 
 env:
   OPENCV_VERSION: 4.10.0
