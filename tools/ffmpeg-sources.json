@@ -1,0 +1,40 @@
+{
+  "binary_commit": "394dca6ceb3085c979415e6385996b6570e94153",
+  "source_commit": "d35ed9aaa15fa2e638e68d22bfc980ea157d88bc",
+  "binary_sha256": {
+    "x64": "3de83b84588b3ee8bacdbea85a8f92d4855a32a1108183963315a7db06ad5744",
+    "x86": "d158bb02be89cecd4fb4909f804c0429aacd127960452b8118a1689d7a56cdc9"
+  },
+  "archives": [
+    {
+      "path": "sources/build/aom/aom-src-v3.9.0.tar.xz",
+      "sha": "ae28442c51492173d01e388de67bb39ba689c595",
+      "size": 3893600
+    },
+    {
+      "path": "sources/build/ffmpeg/ffmpeg-src-n4.4.4.tar.xz",
+      "sha": "289015269fbc541a0a8ee3afaa48b4654447e26a",
+      "size": 9385416
+    },
+    {
+      "path": "sources/build/libvpx/libvpx-src-v1.14.0.tar.xz",
+      "sha": "62075f4c59d1c0422611d9d4e292dc00df7bbadd",
+      "size": 4373316
+    },
+    {
+      "path": "sources/build/openh264/openh264-api-headers-v1.8.0.tar.xz",
+      "sha": "5c44920eff87e8b856864c67e8cf573d556613a1",
+      "size": 15432
+    },
+    {
+      "path": "sources/opencv/opencv-videoio-ffmpeg.tar.xz",
+      "sha": "b9fa99c3d4332cbd1e3d7e6b367a21d4dac56ffc",
+      "size": 34500
+    },
+    {
+      "path": "sources/opencv_ffmpeg.tar.xz",
+      "sha": "9ab753b31048e4587f91cfa614acb95992fcea43",
+      "size": 16972
+    }
+  ]
+}

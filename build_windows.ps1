@@ -1,3 +1,4 @@
+# Modified in this fork: include dependency licenses and FFmpeg source.
 function BuildForWindows($targetPlatform, $vcpkgPath, $runMsbuild, $hostPlatform) {
     if (-not $hostPlatform) {
         $hostPlatform = "x64"
@@ -90,6 +91,7 @@ function BuildForWindows($targetPlatform, $vcpkgPath, $runMsbuild, $hostPlatform
         -D OPENCV_ENABLE_NONFREE=ON `
         -D OPENCV_EXTRA_MODULES_PATH=../opencv_contrib/modules `
         -D BUILD_SHARED_LIBS=OFF ../opencv
+    if ($LASTEXITCODE -ne 0) { throw "OpenCV CMake configuration failed." }
     # ENABLE_CXX11 is for Tesseract (https://github.com/opencv/opencv_contrib/blob/a26f71313009c93d105151094436eecd4a0990ed/modules/text/cmake/init.cmake#L19)
 
     if ($runMsbuild) {
@@ -98,6 +100,9 @@ function BuildForWindows($targetPlatform, $vcpkgPath, $runMsbuild, $hostPlatform
         # WorkDir: C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\
 
         msbuild INSTALL.vcxproj /t:build /p:configuration=Release /p:platform=$msbuildPlatform -maxcpucount
+        if ($LASTEXITCODE -ne 0) { throw "OpenCV INSTALL failed." }
+        python "$PSScriptRoot/tools/collect_redistribution.py" --install "$PWD/install" --vcpkg "$vcpkgPath" --triplet "${targetPlatform}-windows-static"
+        if ($LASTEXITCODE -ne 0) { throw "Redistribution material collection failed." }
         ls
     }
 

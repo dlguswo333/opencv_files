@@ -70,3 +70,10 @@ You can change the target platform and the vcpkg path by editing the .ps1 file.
 https://github.com/shimat/opencv_files/releases
 
 The release packages are built by the GitHub Actions workflow.
+
+## License files and source
+The Windows build needs Python 3. It saves dependency licenses, matching FFmpeg
+source, and build details in `install/redistribution`. Keep this folder in release
+archives. OpenCvSharp copies it into its packages and application output.
+
+When changing the FFmpeg build, update `tools/ffmpeg-sources.json` to match.

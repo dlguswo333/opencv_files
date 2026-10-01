@@ -1,2 +1,5 @@
 build_win_x86
 build_win_x64
+
+# Downloaded source archives
+/.source-cache/
